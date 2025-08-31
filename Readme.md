@@ -32,6 +32,9 @@ Ce projet Ansible installe et configure sur un serveur Debian :
 ## Installation et usage
 
 1. **Lancer le playbook d’installation**
-
+2. **Lancer le playbook de test**
 ```bash
 ansible-playbook -i inventory/hosts playbook.yml
+
+```bash
+ansible-playbook -i inventory/hosts check-playbook.yml
