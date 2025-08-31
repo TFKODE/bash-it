@@ -25,16 +25,20 @@ Ce projet Ansible installe et configure sur un serveur Debian :
 - Serveur Debian accessible en SSH  
 - Ansible installé sur votre machine locale  
 - Clé SSH privée avec permissions correctes (chmod 600) configurée pour accéder au serveur  
-- Fichier d’inventaire Ansible (ex: `inventory/hosts`) configuré avec le serveur cible  
+- Fichier d’inventaire Ansible (exemple : `inventory/hosts`) configuré avec le serveur cible  
 
 ---
 
 ## Installation et usage
 
-1. **Lancer le playbook d’installation**
-2. **Lancer le playbook de test**
-```bash
-ansible-playbook -i inventory/hosts playbook.yml
+1. **Lancer le playbook d’installation :**
 
-```bash
-ansible-playbook -i inventory/hosts check-playbook.yml
+    ```bash
+    ansible-playbook -i inventory/hosts playbook.yml
+    ```
+
+2. **Lancer le playbook de test :**
+
+    ```bash
+    ansible-playbook -i inventory/hosts check-playbook.yml
+    ```
