@@ -1,0 +1,6 @@
+- name: Installer bash-it et alias Python coloré 
+  hosts: tf-machine
+
+  roles:
+    - bash_it
+    

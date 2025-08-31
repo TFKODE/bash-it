@@ -1,0 +1,38 @@
+# Ansible et éditeurs
+.ansible/
+.vscode/
+.idea/
+*.sublime-workspace
+
+# Fichiers retry générés automatiquement quand un playbook échoue
+*.retry
+
+# Fichiers temporaires/backup/éditeurs
+*~
+*.bak
+*.swp
+
+# Secrets et variables d'environnement
+secrets.yml
+vault.yml
+.env
+
+# Inventaires spécifiques à la machine
+inventory/
+# ou si tu veux garder certains exemples
+# !inventory/hosts.example
+
+# Clés SSH ou autres credentials sensibles
+*.pem
+*.key
+
+# Cache Python
+__pycache__/
+*.pyc
+
+# Système macOS
+.DS_Store
+
+# Logs (si tu as un dossier logs)
+logs/
+*.log

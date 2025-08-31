@@ -1,0 +1,39 @@
+- name: Vérifier installation bash-it et pygments
+  hosts: tf-server
+  gather_facts: no
+  tasks:
+    - name: Vérifier que python3-pygments est installé
+      command: dpkg -l python3-pygments
+      register: pygments_check
+      ignore_errors: yes
+
+    - debug:
+        msg: "python3-pygments est installé"
+      when: pygments_check.rc == 0
+
+    - name: Vérifier que dossier bash-it existe
+      stat:
+        path: /root/.bash_it
+      register: bashit_dir
+
+    - debug:
+        msg: "Le dossier bash-it est présent"
+      when: bashit_dir.stat.exists
+
+    - name: Vérifier présence ligne source bash_it.sh dans .bashrc
+      command: grep -q 'source ~/.bash_it/bash_it.sh' /root/.bashrc
+      register: bashrc_source_check
+      ignore_errors: yes
+
+    - debug:
+        msg: "bash_it est bien chargé dans .bashrc"
+      when: bashrc_source_check.rc == 0
+
+    - name: Vérifier alias pycolor dans .bashrc
+      command: grep -q 'alias pycolor=' /root/.bashrc
+      register: alias_check
+      ignore_errors: yes
+
+    - debug:
+        msg: "Alias pycolor est bien présent"
+      when: alias_check.rc == 0
